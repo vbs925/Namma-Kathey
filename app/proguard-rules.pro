@@ -1,0 +1,4 @@
+-keep class com.namma.kathey.data.model.** { *; }
+-keep class com.google.gson.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*

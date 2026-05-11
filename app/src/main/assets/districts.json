@@ -1,0 +1,12 @@
+[
+  {"id":1,"nameEn":"Uttara Kannada","nameKn":"ಉತ್ತರ ಕನ್ನಡ","regionEn":"Coastal Karnataka","colorHex":"#1565C0"},
+  {"id":2,"nameEn":"Belagavi","nameKn":"ಬೆಳಗಾವಿ","regionEn":"North Karnataka","colorHex":"#BF360C"},
+  {"id":3,"nameEn":"Dharwad","nameKn":"ಧಾರವಾಡ","regionEn":"North Karnataka","colorHex":"#4A148C"},
+  {"id":4,"nameEn":"Mysuru","nameKn":"ಮೈಸೂರು","regionEn":"South Karnataka","colorHex":"#1B5E20"},
+  {"id":5,"nameEn":"Dakshina Kannada","nameKn":"ದಕ್ಷಿಣ ಕನ್ನಡ","regionEn":"Coastal Karnataka","colorHex":"#006064"},
+  {"id":6,"nameEn":"Kalaburagi","nameKn":"ಕಲಬುರಗಿ","regionEn":"Hyderabad-Karnataka","colorHex":"#E65100"},
+  {"id":7,"nameEn":"Shivamogga","nameKn":"ಶಿವಮೊಗ್ಗ","regionEn":"Malnad","colorHex":"#33691E"},
+  {"id":8,"nameEn":"Tumakuru","nameKn":"ತುಮಕೂರು","regionEn":"South Karnataka","colorHex":"#880E4F"},
+  {"id":9,"nameEn":"Bidar","nameKn":"ಬೀದರ್","regionEn":"Hyderabad-Karnataka","colorHex":"#37474F"},
+  {"id":10,"nameEn":"Raichur","nameKn":"ರಾಯಚೂರು","regionEn":"Hyderabad-Karnataka","colorHex":"#6D4C41"}
+]
