@@ -18,7 +18,18 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        def geminiKey = project.findProperty("GEMINI_API_KEY") ?: "YOUR_GEMINI_API_KEY_HERE"
+        // Robust loading of API Key from local.properties
+        Properties properties = new Properties()
+        def localPropertiesFile = project.rootProject.file('local.properties')
+        if (localPropertiesFile.exists()) {
+            localPropertiesFile.withInputStream { properties.load(it) }
+        }
+        
+        def geminiKey = properties.getProperty("GEMINI_API_KEY") ?: project.findProperty("GEMINI_API_KEY") ?: "YOUR_GEMINI_API_KEY_HERE"
+        
+        // Clean the key: remove quotes and whitespace that often cause "Invalid Key" errors
+        geminiKey = geminiKey.replace("\"", "").replace("'", "").trim()
+
         buildConfigField("String", "GEMINI_API_KEY", "\"${geminiKey}\"")
     }
 

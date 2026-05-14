@@ -23,6 +23,11 @@ class GeminiHelper @Inject constructor() {
     """.trimIndent()
 
     suspend fun ask(question: String): String {
+        // Validation check for the API Key
+        if (BuildConfig.GEMINI_API_KEY == "YOUR_GEMINI_API_KEY_HERE" || BuildConfig.GEMINI_API_KEY.isEmpty()) {
+            return "Error: API Key is missing or not loaded. Please check your local.properties file and Rebuild the project."
+        }
+
         return try {
             val chat = model.startChat(
                 history = listOf(
@@ -33,7 +38,12 @@ class GeminiHelper @Inject constructor() {
             chat.sendMessage(question).text
                 ?: "Hmm, I couldn't find an answer. Try asking differently!"
         } catch (e: Exception) {
-            "Could not reach AI assistant. Check your API key and internet. (${e.localizedMessage})"
+            val errorMsg = e.localizedMessage ?: "Unknown error"
+            if (errorMsg.contains("API_KEY_INVALID", ignoreCase = true)) {
+                "The API Key provided is invalid. Please double-check it in Google AI Studio. 🔑"
+            } else {
+                "Could not reach AI assistant. (${errorMsg})"
+            }
         }
     }
 }
